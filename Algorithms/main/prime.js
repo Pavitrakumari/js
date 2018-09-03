@@ -26,15 +26,14 @@ var read = readLine.createInterface(
 );
 function prime() {
    // read.question("enter first string : ", function (s1) {
-        //read.question("enter second string :  ", function (s2) {
+        read.question("enter index :  ", function (index) {
 
 
 
-            utility.prime();
+            utility.prime(index);
             read.close();
 
-
-        
+        });        
     
 }
 prime();

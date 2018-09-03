@@ -24,18 +24,18 @@ var read = readLine.createInterface(
         output: process.stdout
     }
 );
-function anagram() {
-    read.question("enter first string : ", function (s1) {
-        read.question("enter second string :  ", function (s2) {
+function palindrome_anagram() {
+   // read.question("enter first string : ", function (s1) {
+    read.question("enter index :  ", function (range) {
+       // read.question("enter userinput : ", function (userinput) {
 
 
-                a=s1.toUpperCase();
-                b=s2.toUpperCase();
-                utility.anagram(a,b);
-                read.close();
-            
-        
-        });
+        utility.palindrome_anagram1(range);
+            //utility.palindrome_anagram(userinput);
+        read.close();
+
     });
+//});
+
 }
-anagram();
+palindrome_anagram();
