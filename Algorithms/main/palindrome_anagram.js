@@ -1,14 +1,13 @@
 /******************************************************************************
-     *  Execution       :   1. default node         cmd> node anagram.js 
+     *  Execution       :   1. default node         cmd> node palindrome_anagram.js 
      *        
-     *  Purpose                      
-     *  : Determines distinct coupon numbers.
+     *  Purpose         : Determines primme numbers that are anagram & palindrome.
      * 
      *  @description    
      * 
-     *  @file           : couponnum.js
-     *  @overview       : couponnum module to determine distinct coupon numbers.
-     *  @module         : couponnum.js- This is optional if expeclictly its an npm or local package
+     *  @file           : palindrome_anagram.js
+     *  @overview       : palindrome_anagram module to determine that are anagram & palindrome.
+     *  @module         : palindrome_anagram.js- This is optional if expeclictly its an npm or local package
      *  @author         : Pavitrakumari <pavithra.korapati@gmail.com>
      *  @version        : 4.0
      *  @since          : 24-08-2018
@@ -25,17 +24,9 @@ var read = readLine.createInterface(
     }
 );
 function palindrome_anagram() {
-   // read.question("enter first string : ", function (s1) {
-    read.question("enter index :  ", function (range) {
-       // read.question("enter userinput : ", function (userinput) {
-
-
+    read.question("enter range of last number :  ", function (range) {
         utility.palindrome_anagram1(range);
-            //utility.palindrome_anagram(userinput);
         read.close();
-
-    });
-//});
-
+        });
 }
 palindrome_anagram();

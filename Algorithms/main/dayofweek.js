@@ -1,51 +1,43 @@
 /******************************************************************************
-     *  Execution       :   1. default node         cmd> node gambler.js 
+     *  Execution       :   1. default node         cmd> node dayofweek.js 
      *                      
      * 
-     *  Purpose         : Determines whether win% & loss %
+     *  Purpose         : Determine day of week using Gregorian calender
      * 
      *  @description    
      * 
-     *  @file           : gambler.js
-     *  @overview       : gambler module to determine win % & loss %.
-     *  @module         : gambler - This is optional if expeclictly its an npm or local package
+     *  @file           : dayofweek.js
+     *  @overview       : dayofweek module to determine day of week using Gregorian calender.
+     *  @module         : dayofweek - This is optional if expeclictly its an npm or local package
      *  @author         : Pavitrakumari<pavithra.korapati@gmail.com>
      *  @version        : 4.0
      *  @since          : 24-08-2018
      *
+ 
      ******************************************************************************/
-var readLine = require('readline');
+var prompt = require('prompt-sync')();
+
 var utility = require('/home/administrator/js/Algorithms/utility/utility.js');
 
 
-var read = readLine.createInterface(
+function dayofweek()
+ {
+    var day = prompt("enter the day : ");
+    day=parseInt(day);
+    if(day>31)
     {
-        input: process.stdin,
-        output: process.stdout
+        console.log("plzz enter correct date....");
+        return;
     }
-);
-function dayofweek() {
-    read.question("enter month : ", function (m) {
-        read.question("enter day: ", function (d) {
-            read.question("enter no.of year : ", function (y) {
-
-
-                if (isNaN(m, d, y)) {
-                    console.log("Plzz enter a numeric value....");
-                }
-                else {
-
-
-
-                    utility.dayofweek(m,d,y);
-                    read.close();
-                }
-            });
-
-        });
-    });
-
-
+     var month = prompt("enter the month : ");
+    month=parseInt(month);
+    if(month>12)
+    {
+        console.log("plzz enter correct month.......");
+        return;
+    }
+    var year = prompt("enter the year : ");
+    year=parseInt(year);
+    utility.dayofweek(day,month,year);
 }
-
 dayofweek();

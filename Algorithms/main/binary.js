@@ -1,14 +1,14 @@
 /******************************************************************************
-     *  Execution       :   1. default node         cmd> node gambler.js 
+     *  Execution       :   1. default node         cmd> node binary.js 
      *                      
      * 
-     *  Purpose         : Determines whether win% & loss %
-     * 
+     *  Purpose         : i)Swap nibbles & find the new number 
+     *                    ii)Find the resultant number is the power of 2
      *  @description    
      * 
-     *  @file           : gambler.js
-     *  @overview       : gambler module to determine win % & loss %.
-     *  @module         : gambler - This is optional if expeclictly its an npm or local package
+     *  @file           : binary.js
+     *  @overview       : binary  module to swap 2 numbers & find if the resultant number is power of 2.
+     *  @module         : binary - This is optional if expeclictly its an npm or local package
      *  @author         : Pavitrakumari<pavithra.korapati@gmail.com>
      *  @version        : 4.0
      *  @since          : 24-08-2018
@@ -26,20 +26,15 @@ var read = readLine.createInterface(
 );
 function binary() {
     read.question("enter a number : ", function (n) {
-
-        //read.question("enter no.of year : ", function (r) {
-
-
-        if (isNaN(n)) {
+        if (isNaN(n))
+         {
             console.log("Plzz enter a numeric value....");
         }
-        else {
+        else 
+        {
             utility.binary(n);
             read.close();
         }
     });
-
-
 }
-
 binary();

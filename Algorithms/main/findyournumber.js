@@ -1,14 +1,14 @@
 /******************************************************************************
-     *  Execution       :   1. default node         cmd> node gambler.js 
+     *  Execution       :   1. default node         cmd> node findyournumber.js 
      *                      
      * 
-     *  Purpose         : Determines whether win% & loss %
+     *  Purpose         :takes a command line argument N,asks you to think of  a number between 0 and N-­1,where N=2^n,and always guesses the answer with n questions.
      * 
      *  @description    
      * 
-     *  @file           : gambler.js
-     *  @overview       : gambler module to determine win % & loss %.
-     *  @module         : gambler - This is optional if expeclictly its an npm or local package
+     *  @file           : findyournumber.js
+     *  @overview       : findyournumber module to take a command­line argument N,asks you to think of a number between 0 and N-­1,where N=2^n,& always guesses the answer with n questions. .
+     *  @module         : findyournumber - This is optional if expeclictly its an npm or local package
      *  @author         : Pavitrakumari<pavithra.korapati@gmail.com>
      *  @version        : 4.0
      *  @since          : 24-08-2018
@@ -26,27 +26,21 @@ var read = readLine.createInterface(
 );
 function findyournumber() {
 
-    read.question("enter starting number : ", function (i) {
-        read.question("enter ending number  : ", function (r) {
-            //read.question("enter no.of year : ", function (y) {
-
-
-                if (isNaN(i,r)) {
+    read.question("enter starting range : ", function (i) {
+        var r=Math.pow(2,i);
+        //read.question("enter ending number  : ", function (r) {
+            if (isNaN(i,r))
+                {
                     console.log("Plzz enter a numeric value....");
                 }
-                else {
-
-
-
+                else 
+                {
                     utility.findyournumber(i,r);
                     read.close();
                 }
             });
 
-        });
-    
-
-
-}
+        
+    }
 
 findyournumber();

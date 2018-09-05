@@ -1,14 +1,14 @@
 /******************************************************************************
-     *  Execution       :   1. default node         cmd> node gambler.js 
+     *  Execution       :   1. default node         cmd> node tobinary.js 
      *                      
      * 
-     *  Purpose         : Determines whether win% & loss %
+     *  Purpose         : Determines binary representation of the given decimal number.
      * 
      *  @description    
      * 
-     *  @file           : gambler.js
-     *  @overview       : gambler module to determine win % & loss %.
-     *  @module         : gambler - This is optional if expeclictly its an npm or local package
+     *  @file           : tobinary.js
+     *  @overview       : tobinary module to determines binary representation of given decimal number.
+     *  @module         : tobinary - This is optional if expeclictly its an npm or local package
      *  @author         : Pavitrakumari<pavithra.korapati@gmail.com>
      *  @version        : 4.0
      *  @since          : 24-08-2018
@@ -25,21 +25,16 @@ var read = readLine.createInterface(
     }
 );
 function tobinary() {
-    read.question("enter a decimal number to covert into binary : ", function (d) {
-
-        //read.question("enter no.of year : ", function (r) {
-
-
-        if (isNaN(d)) {
+    read.question("enter a decimal number to covert into binary : ", function (d) {  //We need to give a numeric value to convert into binary
+        if (isNaN(d)) 
+        {
             console.log("Plzz enter a numeric value....");
         }
-        else {
+        else
+         {
             utility.tobinary(d);
             read.close();
         }
     });
-
-
 }
-
 tobinary();

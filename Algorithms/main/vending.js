@@ -1,13 +1,13 @@
 /******************************************************************************
-     *  Execution       :   1. default node         cmd> node gambler.js 
+     *  Execution       :   1. default node         cmd> node vending.js 
      *                      
      * 
-     *  Purpose         : Determines whether win% & loss %
+     *  Purpose         :  one the number of minimum Note needed to give the change & second list of Rs Notes that would given in the Change
      * 
      *  @description    
      * 
-     *  @file           : gambler.js
-     *  @overview       : gambler module to determine win % & loss %.
+     *  @file           : vending.js
+     *  @overview       : vending module to determine the number of minimum Note needed to give the change & 2nd list of Rs Notes that would given in the Change
      *  @module         : gambler - This is optional if expeclictly its an npm or local package
      *  @author         : Pavitrakumari<pavithra.korapati@gmail.com>
      *  @version        : 4.0
@@ -26,12 +26,8 @@ var read = readLine.createInterface(
 );
 function vending() {
     var index=0;
-    var notes=[1000,500,100,50,20,10,5,2,1];
+    var notes=[1000,500,100,50,20,10,5,2,1];                 //The notes that are available to give change
     read.question("enter a amount : ", function (money) {
-
-        //read.question("enter no.of year : ", function (r) {
-
-
         if (isNaN(money)) {
             console.log("Plzz enter a numeric value....");
         }

@@ -1,14 +1,14 @@
 /******************************************************************************
-     *  Execution       :   1. default node         cmd> node gambler.js 
+     *  Execution       :   1. default node         cmd> node sqrt.js 
      *                      
      * 
-     *  Purpose         : Determines whether win% & loss %
+     *  Purpose         : Determines square root of a non-negative number using Newton's Method.
      * 
      *  @description    
      * 
-     *  @file           : gambler.js
-     *  @overview       : gambler module to determine win % & loss %.
-     *  @module         : gambler - This is optional if expeclictly its an npm or local package
+     *  @file           : sqrt.js
+     *  @overview       : sqrt module to determines square root of a non-negative number using Newton's Method
+     *  @module         : sqrt - This is optional if expeclictly its an npm or local package
      *  @author         : Pavitrakumari<pavithra.korapati@gmail.com>
      *  @version        : 4.0
      *  @since          : 24-08-2018
@@ -26,21 +26,15 @@ var read = readLine.createInterface(
 );
 function sqrt() {
     read.question("enter a number to find square root: ", function (c) {
-        
-            //read.question("enter no.of year : ", function (r) {
-
-
-            if (isNaN(c)) 
-            {
+        if (isNaN(c)) 
+        {
                 console.log("Plzz enter a numeric value....");
-            }
-            else {
+        }
+        else
+        {
                 utility.sqrt(c);
                 read.close();
-            }
-        });
-
-    
+        }
+    });
 }
-
 sqrt();
