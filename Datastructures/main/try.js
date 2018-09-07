@@ -23,22 +23,29 @@ function unOrderedList() {
         for (var i = 0; i < (data.length); i++)//adding data to list
        {
             list.add(data[i]);
-        }
+       }
 
-        list.printList();
+        //list.printList();
 
-        if (list.indexOf(element) == -1) {
-           list.add(element);
+        if (list.indexOf(element) == -1) 
+        {
+           list.insertAt(element,data.length);
+           
         }
          else
          {
             list.removeElement(element);
-           //console.log(k);
+           
         }
         
         list.printList();
+        //var l1=[];
+        var l1=list.printList1();
+        fs.writeFileSync('/home/administrator/js/Datastructures/main/file1.txt', l1) ;
+            
 
-read.close();
+
+        read.close();
     });
 }
 unOrderedList();
