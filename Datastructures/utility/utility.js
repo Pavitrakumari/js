@@ -1,37 +1,38 @@
 class Node {
-    // constructor
+                                         // constructor
     constructor(element) {
         this.element = element;
         this.next = null
     }
 }
-// linkedlist class
-class LinkedList {
-    constructor() {
+                                       // linkedlist class
+class LinkedList 
+{
+    constructor() 
+    {
         this.head = null;
         this.size = 0;
     }
 
-    // functions to be implemented
-    // add(element)
-    // adds an element at the end
-    // of list
-    add(element) {
-        // creates a new node
+        // functions to be implemented
+        // add(element)
+        // adds an element at the end
+        // of list
+        add(element) {
+                                           // creates a new node
         var node = new Node(element);
 
-        // to store current node
+                                           // to store current node
         var current;
 
-        // if list is Empty add the
-        // element and make it head
+                                           // if list is Empty add the
+                                            // element and make it head
         if (this.head == null)
             this.head = node;
         else {
             current = this.head;
 
-            // iterate to the end of the
-            // list
+                                             // iterate to the end of  the list
             while (current.next) {
                 current = current.next;
             }
@@ -49,14 +50,13 @@ class LinkedList {
         if (index > 0 && index > this.size)
             return false;
         else {
-            // creates a new node
+                                                       // creates a new node
             var node = new Node(element);
             var curr, prev;
 
             curr = this.head;
 
-            // add the element to the
-            // first index
+                                               // add the element to the first index
             if (index == 0) {
                 node.next = head;
                 this.head = node;
@@ -64,15 +64,15 @@ class LinkedList {
                 curr = this.head;
                 var it = 0;
 
-                // iterate over the list to find
-                // the position to insert
+                                              // iterate over the list to find
+                                              // the position to insert
                 while (it < index) {
                     it++;
                     prev = curr;
                     curr = curr.next;
                 }
 
-                // adding an element
+                                              // adding an element
                 node.next = curr;
                 prev.next = node;
             }
@@ -92,39 +92,35 @@ class LinkedList {
             curr = this.head;
             prev = curr;
 
-            // deleting first element
+                                                        // deleting first element
             if (index == 0) {
                 this.head = curr.next;
             }
             else {
-                // iterate over the list to the
-                // position to removce an element
+                                        // iterate over the list to the position to removce an element
                 while (it < index) {
                     it++;
                     prev = curr;
                     curr = curr.next;
                 }
 
-                // remove the element
+                                                     // remove the element
                 prev.next = curr.next;
             }
             this.size--;
 
-            // return the remove element
+                                                        // return the remove element
             return curr.element;
         }
     }
-    // removes a given element from the
-    // list
+                                                    // removes a given element from the list
     removeElement(element) {
         var current = this.head;
         var prev = null;
 
-        // iterate over the list
+                                                        // iterate over the list
         while (current != null) {
-            // comparing element with current
-            // element if found then remove the
-            // and return true
+                    // comparing element with current element if found then remove the & return true
             if (current.element === element) {
                 if (prev == null) {
                     this.head = current.next;
@@ -145,10 +141,9 @@ class LinkedList {
         var count = 0;
         var current = this.head;
 
-        // iterae over the list
+                                                     // iterae over the list
         while (current != null) {
-            // compare each element of the list
-            // with given element
+                                                 // compare each element of the list with given element
             if (current.element == element)
                 return count;
             count++;
@@ -159,16 +154,17 @@ class LinkedList {
         return -1;
     }
 
-    isEmpty() {
+    isEmpty()
+    {                    //it returns true if the ;ist is empty,otherwise it returns false
         return this.size == 0;
     }
 
     // removeElement(element)
 
-    size_of_list() {
+    size_of_list() {                 //it gives the size of the list
         console.log(this.size);
     }
-    printList() {
+    printList() {                       //it prints all the elements present in the list
         var curr = this.head;
         var str = "";
         while (curr) {
@@ -186,61 +182,56 @@ class LinkedList {
         }
         return str;
     }
-    /**
-     sortedInsert(Node new Node)
-    {
-        var current;
-
-         Special case for head node 
-        if (head == null || head.data >= new_node.data) {
-        new_node.next = head;
-        head = new_node;
-    }
-    else {
-
-        //Locate the node before point of insertion. //
-        current = head;
-
-        while (current.next != null &&
-            current.next.data < new_node.data)
+    GetElement(index) {                   //it is used to get the element present in a particular index
+        var current = this.head;
+        var count = 0;                      /* index of Node we are currently looking at */
+        while (current != null) {
+            if (count == index)
+                return current.element;
+            count++;
             current = current.next;
+        }
 
-        new_node.next = current.next;
-        current.next = new_node;
+        /* if we get to this line, the caller was asking 
+        for a non-existent element so we assert fail */
+
+        return 0;
+    } 
+    insertSort(element)
+    {
+
+        var node = new Node(element);
+
+        /* Special case for head node */
+        if (this.head == null || this.head.element >= node.element) 
+        {
+            node.next = this.head;
+            this.head = node;
+        }
+        else 
+        {
+            /* Locate the node before point of insertion. */
+            var current = this.head;
+
+            while (current.next != null &&
+                 current.next.element < node.element)
+                current = current.next;
+
+            //  console.log(current.next.element);
+
+
+            node.next = current.next;
+            current.next = node;
+        }
+
     }
-*/
 
 
-    // Helper Methods
-    // isEmpty
-    // size_Of_List
-    // PrintList
+    
 }
 
 
-module.exports = LinkedList;
-/**class Stack {
+module.exports = LinkedList
 
-    // Array is used to implement stack
-    constructor() {
-        this.items = [];
-    }
 
-    // Functions to be implemented
-    // push(item)
-    // pop()
-    // peek()
-    // isEmpty()
-    // printStack()
-}
-pop()
-{
-    // return top most element in the stack
-    // and removes it from the stack
-    // Underflow if stack is empty
-    if (this.items.length == 0)
-        return "Underflow";
-    return this.items.pop();
-}
-module.exports = Stack;*/
 

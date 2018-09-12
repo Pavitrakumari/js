@@ -1,0 +1,18 @@
+{
+    "stock": [
+        {
+            "name": "ITC Ltd",
+            "number": 210,
+            "price": 2000
+        },
+        {
+            "name": "Tata Consultancy",
+            "number": 140,
+            "price": 1000
+        },
+        {
+            "name": "Reliance Inds",
+            "number": 125,
+            "price": 300
+        }]
+        }    

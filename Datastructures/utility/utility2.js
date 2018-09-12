@@ -17,7 +17,7 @@ class Stack {
 push(element)
 {
     // push element into the items
-    this.items.push(element);
+    this.items.push(element)43;
 }
 // pop function
 pop()
@@ -52,6 +52,19 @@ printStack()
         str += this.items[i] + " ";
     return str;
 }
+Palindrome(str)
+{
+    var len=str.length;
+    for(var i=0;i<len/2;i++)
+    {
+        if(str.charAt(i)!=str.charAt(len-1-i))
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 }
 module.exports = Stack;
 

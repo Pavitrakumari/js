@@ -1,3 +1,18 @@
+/******************************************************************************
+*  Execution       :   1. default node         cmd> node unordered.js 
+*        
+*  Purpose         :  To read the text from a file,split it into words & arrange it as Linked List. 
+* 
+*  Description    
+* 
+*  @file           : unordered.js
+*  @overview       : unordered module to read the text from a file,split it into words & arrange it as Linked List.
+*  @module         : unordered.js- This is optional if expeclictly its an npm or local package
+*  @author         : Pavitrakumari <pavithra.korapati@gmail.com>
+*  @version        : 4.0
+*  @since          : 06-09-2018
+*
+******************************************************************************/
 var utility = require('/home/administrator/js/Datastructures/utility/utility.js');
 fs = require('fs');
 var data = fs.readFileSync('/home/administrator/js/Datastructures/main/file2.txt', 'utf8');
@@ -7,8 +22,6 @@ data.sort(function (a, b) {
     return a - b;
 });
 
-
-
 var readline = require('readline');
 var read = readline.createInterface(
     {
@@ -17,50 +30,45 @@ var read = readline.createInterface(
     }
 );
 function orderedList() {
+    //var array = [];
+    var list = new utility();
 
-    //read.question('Enter the element to search: ', function (element) {
+    for (var i = 0; i < (data.length); i++)      /**adding data to list*/
+    {
+        list.add(data[i]);
+    }
+    console.log("ascending order of list: ");   /**Ascending order representation of list*/
+    var string = list.printList1();
 
-        var list = new utility();
-        for (var i = 0; i < (data.length); i++)//adding data to list
+    console.log(string);
+    
+    read.question('Enter the element to search: ', function (element) {
+        if(isNaN(element)) 
         {
-            list.add(data[i]);
+            console.log("Please enter a numeric value to search...............");
+            return;
+            
         }
-        console.log(" Ascending order representation of the given list is : ")
-        list.printList();
-        read.question('Enter a number  to search: ', function (element) {
-        if (list.indexOf(element) == -1)
-         {
-            list.insertAt(element, data.length);
-            var l1=[];
-            l1 = list.printList1();
-           // console.log(l1);
-             l2=list.sort(l1);          
-           console.log(l2);
-
+        //string = list.printList();
+        if (list.indexOf(element) == -1) {
+            list.insertSort(parseInt(element));      /**inserts an element at appropriate position*/
         }
-        else 
-        {
-            list.removeElement(element);
-            list.printList();
-
-       }
-
-        //list.printList();
-           /** var l1=[];
-             l1=list.printList1();
-            console.log(l1);
-            l1 = l1.toString().split(' ' );
-
-            l1.sort(function (a, b) {
-                return a - b;
-            });
-            console.log(l1);*/
-
+        else {
+            list.removeElement(element);              /**Removes the element from the list */
+        }
+        string = list.printList1();
+        console.log(string);                         /**prints the elements in the list */
+        fs.writeFileSync('/home/administrator/js/Datastructures/main/file2.txt', string);
 
         read.close();
+
     });
 }
 orderedList();
+
+
+
+
 
 
 

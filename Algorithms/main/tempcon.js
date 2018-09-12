@@ -23,7 +23,7 @@ var utility = require('/home/administrator/js/Algorithms/utility/utility.js');
 function tempcon1() {
     var choice = prompt("enter your choice :   1.celsius to fahrenheit conversion      2.Fahrenheit to celsius conversion : ");
     if(choice==1)                //if choice=1,then it performs celsius to fahrenheit conversion
-    {
+{
         var c=prompt("enter the temperature in celsius to convert into fahrenheit : ");
         utility.tempcon(c);
     }

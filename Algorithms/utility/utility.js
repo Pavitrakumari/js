@@ -9,16 +9,16 @@ module.exports = {
     /************PROGRAM TO CHECK WHETHER 2 STRINGS ARE ANAGRAM OR NOT ******************************8*/
     anagram: function (s1,s2)
      {
-         var y=s1.split("").sort();      //split():to split string into substrings
-        var z = s2.split("").sort();      
-                                      /**sort():
-                                      * Description : The sort() method sorts the items of an array.
-                                     By default, the sort() method sorts the values as strings in alphabetical and ascending order.*/
+         var y=s1.split("").sort();     //split():to split string into substrings
+        var z =s2.split("").sort();      
+                                       /**sort():
+                                       * Description : The sort() method sorts the items of an array.
+                                       By default, the sort() method sorts the values as strings in alphabetical and ascending order.*/
          if(y.length==z.length)
          {
             for(var i=0;i<y.length;i++)    
             {
-                                      //if the length of the given 2 input strings are equal,then only the given strings can be anagrams
+                                         //if the length of the given 2 input strings are equal,then only the given strings can be anagrams
                     if(y[i]===z[i])      //check all the characters of the string are same or not.
                     {
                         console.log(s1+" and "+s2+" are anagrams !");
@@ -31,7 +31,7 @@ module.exports = {
                     break;
             }
          }
-        else                     //if the length of the given 2 input strings are not equal,then it cannot be a anagram
+        else                            //if the length of the given 2 input strings are not equal,then it cannot be a anagram
             console.log("The given 2 strings are not anagrams......");
     },
 
@@ -64,7 +64,7 @@ module.exports = {
             if(k==0)
            {
             
-               console.log(i);    //prints the prime numbers in an arary
+               console.log(i);     //prints the prime numbers in an arary
            }
         }
     },
@@ -97,7 +97,7 @@ module.exports = {
             }
             if(flag===false)
             {
-                arr.push(i);
+                arr.push(i);             //pushes all the primes into the array
             }    
         } 
         var arr1=[];
@@ -126,8 +126,7 @@ module.exports = {
             var s=arr1[i];
             while(arr1[i]>0)
             {
-                r=arr1[i]%10;
-                //sum=(sum*10)+r;
+                r=arr1[i]%10;                    //logic to check given number is palindrome or not
                 arr1[i]=parseInt(arr1[i]/10);
                 sum = (sum * 10) + r;
             }
@@ -181,7 +180,7 @@ module.exports = {
         {
             arr[i] = parseInt(prompt("enter integer numbers into the array : ")); 
         }
-        arr.sort(function(a,b) { return a-b; } );
+        arr.sort(function (a, b) { return a - b; });//The sort() method sorts the items of an array.
         console.log(arr);
         var f=0,l=size-1;
         var sea=prompt("enter the element you want to search : ");
@@ -482,7 +481,7 @@ module.exports = {
         }
         if (count == arr.length)
          {
-            //arr.sort(function (a, b) { return a - b; });
+
             this.sort(arr);
             console.log(arr);
          }
@@ -603,21 +602,22 @@ module.exports = {
         console.log(".........BUBBLE SORT FOR INTEGERS...........")
 
         var arr = new Array(size);
-        for (i = 0; i < size; i++) {
+        for (i = 0; i < size; i++)
+         {
             arr[i] = parseInt(prompt("Enter integer elements  in the array : "));
         }
         
-            var n = arr.length - 1;
-            for (var i = 0; i < n; i++) {
-                for (var j = 0; j < n - i; j++) {
+        var n = arr.length - 1;
+        for (var i = 0; i < n; i++) {                 
+                for (var j = 0; j < n - i; j++) {    //for every iteration,1 element is sorted at the end
                     if (arr[j] > arr[j + 1]) {
-                        var temp = arr[j];
+                        var temp = arr[j];            //uses temperary variable to swap the 2 elements
                         arr[j] = arr[j + 1];
                         arr[j + 1] = temp;
                     }
                 }
-            }
-            console.log(arr);
+         }
+        console.log(arr);
         
     },
 
@@ -637,61 +637,17 @@ module.exports = {
 
         aa = (Math.floor((14 - month) / 12));
         aa = parseInt(aa);
-        // console.log(aa)
+        
         yy = year - aa;
-        // console.log(yy)
+        
         mm = ((month + (12 * aa)) - 2);
         mm = parseInt(mm);
-        // console.log(mm)
+        
         dayofweek = ((day + yy + Math.floor(yy / 4) - Math.floor(yy / 100)     /**This is the formula for 
                                                                             calculating day of week*/
         + Math.floor(yy / 400) + Math.floor((31 * mm) / 12)) % 7);
-        // console.log(dayOfweek)
+        
         dayofweek = parseInt(dayofweek);
-        switch (parseInt(month)) {
-            case 1:
-                console.log("January\n");
-                break;
-            case 2:
-                console.log("February\n");
-                break;
-            case 3:
-                console.log("March\n");
-                break;
-            case 4:
-                console.log("April\n");
-                break;
-            case 5:
-                console.log("May\n");
-                break;
-            case 6:
-                console.log("June\n");
-                break;
-            case 7:
-                console.log("July\n");
-                break;
-            case 8:
-                console.log("August\n");
-                break;
-            case 9:
-                console.log("September\n");
-                break;
-            case 10:
-                console.log("October\n");
-                break;
-            case 11:
-                console.log("November\n");
-                break;
-            case 12:
-                console.log("December\n");
-                break;
-            default:
-                console.log("invalid Month number\nPlease try again ....\n");
-                break;
-        }
-
-        //   var x= ((dayofweek + 6) % 7) + 1;
-
         switch ((dayofweek)) {
             case 0:
                 console.log("Sunday");
@@ -785,24 +741,47 @@ module.exports = {
     {
     
        var flag;
-        arr= arr.sort(function (a, b) { return a-b; });
-        console.log(arr);
+       // arr= arr.sort(function (a, b) { return a-b; });
+        var a = /[a-zA-Z]/g;
+        var b = /[0-9]/g;
+        var c = /[!@#$%^&*()<>+-/"'?]/g;
+        var count = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i].search(b) == -1 && arr[i].search(c) == -1) //This is used to check whether the given inputs are strings or not
+            {
+                count++;
+            }
+        }
+        if (count == arr.length) //if count is equal to array length,then only it performs the search operation
+        
+        {
+            arr=arr.sort();
+           // arr=arr.ignoreCase;
+            console.log(arr);
+           var sea=prompt("Enter the element to search : ");
+       
         var f = 0 ;
         var l = arr.length - 1;
-        while (f <= l) {
+        while (f <= l)
+        {
             var m = Math.floor((f + l) / 2);
-            if (sea == arr[m]) {
+            if (sea == arr[m])
+            {
              flag= 1;
                 break;
             }
             else
-                if (sea > arr[m]) {
+            {
+
+                if (sea > arr[m]) 
+                {
                         f =m + 1;
                 }
-                    else
-                     {
+                else
+                {
                         l = m - 1;
-                    }
+                }
+            }
                 
         }
         if (flag== 1) {
@@ -812,7 +791,7 @@ module.exports = {
         else {
             console.log("element not found ");
         }
-
+    }
 
     },
 
@@ -890,13 +869,7 @@ module.exports = {
 
     /**********************SWAP TWO NIBBLES & FIND NUMBER IS A POWER OF 2******************* */
     binary:function(n)
-    {
-        //try{
-
-          //  console.log(v);
-        //}catch(err){
-          //  console.log(err.message);
-        //}finally{
+{
 
         this.tobinary(n);
         var v=((n & 0x0F) <<4 | (n & 0xF0)>>4);
@@ -939,24 +912,42 @@ module.exports = {
 
 
     /*****************VENDING MACHINE PROGRAM **************************************************** */
-    vending:function(money,notes,index){
-              var total=0;
-              if(money==0)
-              {
-                  return false;
-              }
-              else{
-                  if(money>=notes[index])
-                  {
-                      var calculate=Math.floor(money/notes[index]);     //takes the quotient when divided by money &
-                      money=money%notes[index];                        //updates the money remained to be calculated
-                      total=total+calculate;
-                      console.log("The number of "+notes[index]+"/- notes are  : "+total);
-                  }
-                  index++;
-                  return this.vending(money,notes,index)     /**Recursively calls the vending function to calculate the notes for remaining money */
-              }
-    },
+   
+                
+
+
+    vending: function(money) {
+            var total = 0;
+            var index = 0;
+            var notes = [1000, 500, 100, 50, 20, 10, 5, 2, 1];
+            var money;
+            function   change(index) {
+                if (index < notes.length) {
+
+
+                    if (money >= notes[index]) {
+
+                        var calculate = Math.floor(money / notes[index]);
+                        var rem = money % notes[index];
+                        money = rem;
+                        total = total + calculate;
+
+                        console.log(notes[index] + " Notes are  : " + calculate);
+
+                    }
+                    index++;
+                    change(index);
+                }
+
+            }
+            change(index);
+            console.log(" The total number of notes required are : "+total);
+        },
+
+
+
+        
+
 
 
 

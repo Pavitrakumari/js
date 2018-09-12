@@ -36,11 +36,11 @@ var data=fs.readFileSync('file.txt');
 data=data.toString().split(',');        // It converts the given data into string & then split it
 function binarywordlist()
 {
-    read.question("enter the element to search : ",function(sea){  //We need to give the element that need to be searched
+    //read.question("enter the element to search : ",function(sea){  //We need to give the element that need to be searched
  
-                 utility.binarywordlist(data,sea);
+                 utility.binarywordlist(data);
                  read.close();
- });
+ 
 
 }
 binarywordlist();

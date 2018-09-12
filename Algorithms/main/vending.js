@@ -25,8 +25,8 @@ var read = readLine.createInterface(
     }
 );
 function vending() {
-    var index=0;
-    var notes=[1000,500,100,50,20,10,5,2,1];                 //The notes that are available to give change
+  //  var index=0;
+  //  var notes=[1000,500,100,50,20,10,5,2,1];                 //The notes that are available to give change
     read.question("enter a amount : ", function (money) {
         if (isNaN(money)) {
             console.log("Plzz enter a numeric value....");
@@ -34,7 +34,7 @@ function vending() {
         else {
             if(money>0){
 
-            var money=utility.vending(money,notes,index);
+            utility.vending(money);
             }
             else{
                 console.log("Please enter only positive numbers : ");
