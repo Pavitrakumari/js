@@ -2,17 +2,17 @@
     "stock": [
         {
             "name": "ITC Ltd",
-            "number": 210,
-            "price": 2000
+            "number": 2,
+            "price": 200
         },
         {
             "name": "Tata Consultancy",
-            "number": 140,
-            "price": 1000
+            "number": 3,
+            "price": 100
         },
         {
             "name": "Reliance Inds",
-            "number": 125,
-            "price": 300
+            "number": 4,
+            "price": 30
         }]
-        }    
+}    
