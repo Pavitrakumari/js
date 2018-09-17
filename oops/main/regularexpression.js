@@ -1,3 +1,18 @@
+/********************************************************************************************************
+*  Execution       :   1. default node         cmd> node regularexpression.js 
+* 
+*  Purpose         : To sort the deck of cards & maintain in queue using linked list
+* 
+*  @description    
+* 
+*  @file           : regularexpression.js
+*  @overview       : To sort the deck of cards & maintain in queue using linked list
+*  @author         : Pavitrakumari <pavithra.korapati@gmail.com>
+*  @version        : 4.2.1
+*  @since          : 11-09-2018
+*
+***********************************************************************************************************/
+
 var prompt = require('prompt-sync')();
 
 var fs = require('fs');
@@ -37,7 +52,7 @@ for (var i = 0; i < arr2.length; i++) {
     }
 }
 if (count2 == arr2.length) {
-    rawdata = rawdata.replace("<<full name>>", fullname);
+    rawdata = rawdata.replace("<<name>>", fullname);
 }
 else {
     console.log(" Plzz enter only strings to give your full name.........");

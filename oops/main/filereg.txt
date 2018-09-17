@@ -1,3 +1,4 @@
-Hello korapati, 
-We have your full name as pavitra kumari in our system.
-your contact number is 91­7997225168.Please,let us know in case of any clarification Thank you BridgeLabz 12/8/2018
+Hello , <<name>>
+We have your full name as <<name>> in our system.
+your contact number is 91­xxxxxxxxxx.
+Please,let us know in case of any clarification Thank you BridgeLabz 01/01/2016

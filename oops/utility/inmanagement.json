@@ -1,4 +1,1 @@
-{
-    "stock":[]
-        
-}
+{"stock":[{"name":"pp","share":3,"price":4},{"name":"op","share":4,"price":3},{"name":"jk","share":22,"price":2},{"name":"ee","share":"e","price":"e"}]}

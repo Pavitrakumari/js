@@ -22,7 +22,7 @@ var queue = new utility2();
 
 var suit = ["♣", "♦", "♥", "♠"];
 //var  rank =["2","3","4","5","6","7","8","9","10","J","Q","K","A"];
-var rank = ['2', '3', '4', '5', '6', '7', '8', '9', '1', 'J', 'Q', 'K', 'A'];
+var rank = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 var deck = new Array();
 
 for (var i = 0; i < suit.length; i++) {
@@ -71,18 +71,21 @@ for (var i = 0; i < 4; i++) {
 }
 console.log("  ");
 for (var i = 0; i < array2.length; i++) {
-    list.add(array2[i]);
+    list.add("      player"+(i+1)+" :    "+array2[i]);
 }
 var k = list.printList1();
-console.log("The cards distributed to players in list are : " + k);
+console.log("The cards distributed to players in list are  :   " + k);
 
 for (var i = 0; i < array2.length; i++) {
-    queue.enqueue(array2[i]);
+    queue.enqueue("      player" + (i + 1) + "  :    " +array2[i]);
 }
 //queue.dequeue(array2[0]);
 
 var res = queue.printQueue();
-console.log("The cards distributed to players  in queue is " + res);
+console.log("    ");
+console.log("    ");
+
+console.log("The cards distributed to players  in queue are  :    " + res);
 
 
 

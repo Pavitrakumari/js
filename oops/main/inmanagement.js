@@ -1,4 +1,4 @@
-/******************************************************************************
+/********************************************************************************************************
  *  Execution       :   4. default node         cmd> node inmanagement.js 
  * 
  *  Purpose         :  calculating the value of each stock and total value and reading data to json file
@@ -10,22 +10,22 @@
  *  @version        : 4.0
  *  @since          : 12-09-2018.
  *
- ******************************************************************************/
+ ********************************************************************************************************/
 var fs = require('fs')
 var prompt = require('prompt-sync')();
 
 
-fs.readFile('', function (err, data) {
+fs.readFile('/home/administrator/js/oops/utility/inmanagement.json', function (err, data) {
     if (err) throw err
 
     var arrayOfObjects = JSON.parse(data);
-    var size = prompt('Enter the number of stock you want ');
+    var size = prompt('Enter the number of stock you want : ');
     for (var i = 0; i < size; i++) {
 
-        var name1 = prompt('Enter the name of stock ');
-        var shares = parseInt(prompt('Enter the shares '));
+        var name1 = prompt('Enter the name of stock : ');
+        var shares = parseInt(prompt('Enter the number of shares : '));
 
-        var price1 = parseInt(prompt('Enter the price  '));
+        var price1 = parseInt(prompt('Enter the price  : '));
 
 
         arrayOfObjects.stock.push({
@@ -36,7 +36,7 @@ fs.readFile('', function (err, data) {
 
         console.log(arrayOfObjects);
 
-        fs.writeFileSync('/home/bridgeit/Madhavi_p/nodeprograms/oops/utility/management.json', JSON.stringify(arrayOfObjects), 'utf-8', function (err) {
+        fs.writeFileSync('/home/administrator/js/oops/utility/inmanagement.json', JSON.stringify(arrayOfObjects), 'utf-8', function (err) {
             if (err) throw err
         })
     }
@@ -74,7 +74,7 @@ fs.readFile('', function (err, data) {
 
         //overwriting the file and saving to the json file
 
-        fs.writeFile('/home/bridgeit/Madhavi_p/nodeprograms/oops/utility/management.json', JSON.stringify(arrayOfObjects), 'utf-8', function (err) {
+        fs.writeFile('/home/administrator/js/oops/utility/inmanagement.json', JSON.stringify(arrayOfObjects), 'utf-8', function (err) {
             if (err) throw err
             return;
         })
@@ -82,7 +82,7 @@ fs.readFile('', function (err, data) {
     }
     else if (choice == 2) {
         delete arrayOfObjects.stock[0];//deleting the stock
-        fs.writeFile('/home/bridgeit/Madhavi_p/nodeprograms/oops/utility/management.json', JSON.stringify(arrayOfObjects), 'utf-8', function (err) {
+        fs.writeFile('/home/administrator/js/oops/utility/inmanagement.json', JSON.stringify(arrayOfObjects), 'utf-8', function (err) {
             if (err) throw err
             console.log(arrayOfObjects);
         })

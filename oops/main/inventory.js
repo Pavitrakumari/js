@@ -49,6 +49,6 @@ for (var key in wheat) /** it iterates for all the elements in the wheat */
     console.log("The price for "+wheat[key].name+" is : "+wheat[key].weight * wheat[key].price);
     console.log();/**printing the individual price  */
 }
-console.log("{RICE : "+(parseInt(rice[0].weight)*parseInt(rice[0].price))+(parseInt(rice[1].weight)*parseInt(rice[1].price))+(parseInt(rice[2].weight)*parseInt(rice[2].price)));
-console.log("      {PULSES : "+(pulses[0].weight*pulses[0].price)+(pulses[1].weight*pulses[1].price)+(pulses[2].weight*pulses[2].price));
-console.log("                {WHEAT : "+(wheat[0].weight*wheat[0].price)+(wheat[1].weight*wheat[1].price)+(wheat[2].weight*wheat[2].price)+" }  }  } ");
+console.log("{RICE : "+((rice[0].weight*rice[0].price)+(rice[1].weight*rice[1].price)+(rice[2].weight*rice[2].price)));
+console.log("      {PULSES : "+((pulses[0].weight*pulses[0].price)+(pulses[1].weight*pulses[1].price)+(pulses[2].weight*pulses[2].price)));
+console.log("                {WHEAT : "+((wheat[0].weight*wheat[0].price)+(wheat[1].weight*wheat[1].price)+(wheat[2].weight*wheat[2].price))+" }  }  } ");
