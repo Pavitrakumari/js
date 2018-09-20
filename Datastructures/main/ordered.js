@@ -31,7 +31,7 @@ var read = readline.createInterface(
 );
 function orderedList() {
     //var array = [];
-    var list = new utility();
+    var list = new utility();/**creating an object for utility for linked list */
 
     for (var i = 0; i < (data.length); i++)      /**adding data to list*/
     {

@@ -28,7 +28,7 @@ function stack() {
                     back++; //A variable back is used & incremented whenever stack is poped
                 }
                 catch(err){           //whenever an error occurs,then catch is used to catch the error
-                    console.log('unmatched');
+                    console.log('The given Arithmeti expression is Unbalanced');
                 }
             }    
                 
@@ -36,10 +36,10 @@ function stack() {
         }
     if ((stack.isEmpty()) && (front==back))           //if stack is empty & front ,back are equal, then 
         {
-                console.log("Balanced Parenthisis");   //the given expression is balanced expression
+                console.log("The given Arithmeti expression is Balanced");   //the given expression is balanced expression
         }
         else
-                console.log(" unBalanced");           //else the given expression is unbalanced 
+                console.log("The given Arithmetic exprssion is  UnBalanced");           //else the given expression is unbalanced 
         read.close();
     });
 }

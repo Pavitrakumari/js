@@ -14,7 +14,9 @@
 *****************************************************************************************************************/
 
 var fs = require('fs');
-var deck = new Array();/**to declare an empty array */
+
+
+let deck = new Array();/**to declare an empty array */
 var suit =[ "Spades", "Hearts", "Diamonds", "Clubs"];/**the elements in the deck */
 var rank = [ "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];/**the elements in the deck */
 for(var i=0;i<suit.length;i++)

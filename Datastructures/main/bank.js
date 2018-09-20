@@ -1,3 +1,20 @@
+/******************************************************************************
+*  Execution       :   1. default node         cmd> node bank.js 
+*        
+*  Purpose         :  A Queue Class to enqueue & dequeue people to either deposit or withdraw money & maintain the cash balance
+
+* 
+*  Description    
+* 
+*  @file           : bank.js
+*  @overview       : A Queue Class to enqueue & dequeue people to either deposit or withdraw money & maintain the cash balance
+*  @module         : bank.js- This is optional if expeclictly its an npm or local package
+*  @author         : Pavitrakumari <pavithra.korapati@gmail.com>
+*  @version        : 4.0
+*  @since          : 06-09-2018
+*
+******************************************************************************/
+
 var prompt = require('prompt-sync')()
 var utility = require('/home/administrator/js/Datastructures/utility/utility3.js')
 function cashCounter() {
@@ -13,8 +30,13 @@ function cashCounter() {
 
     }
     var minimumamount = 20000;
+    console.log("THE  BALANCE PRESENT IN YOUR ACCOUNT IS : " +"20,000/-"+" ");
     var customers = prompt("Enter number of customers to be added into the queue : ");//input to add the custonmers into the queue
-    if(isNaN(customers)) console.log("Please enter the count of customers to be added.....")
+    if(isNaN(customers)) 
+    {
+        console.log("Please enter the count of customers to be added.....");
+        cashCounter();
+    }
     if(customers==0) console.log(" No customer added in the queue......");
     for (var i = 0; i < customers; i++) {   //to add the customers into the queue(enqueue)
         queue.enqueue(i);
@@ -22,8 +44,16 @@ function cashCounter() {
 
     while (queue.getSize()>0) {                 //if queue size is greater than 0
         var option = prompt("Enter 1 to withdraw and 2 to deposit amount: ");  //taking user's choice to perform a certain operation
+        
         if (option == 1) {                                  //if option is '1' it performs withdraw operation
             var withdraw_amt = prompt("Enter the amount to be withdrawn: ");
+            if (isNaN(withdraw_amt )) 
+            {
+                console.log("Please give a numeric value............");
+                cashCounter();
+
+            }
+
             if (minimumamount >= withdraw_amt) {            //the min amount in the bank should be greater than withdraw amount
                 var balance = Number(minimumamount) - Number(withdraw_amt);  //performing withdarw & calculating the balance left in the account
                 console.log("available balanace= " + balance);

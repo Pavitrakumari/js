@@ -16,7 +16,6 @@ var fs = require('fs');
 var prompt = require('prompt-sync')();
 var utility = require('/home/administrator/js/Datastructures/utility/utility.js');
 const util=require('util');
-
 //let data = fs.readFileSync('/home/administrator/js/oops/utility/commercial.json');
 var k,i,y;
 var list=new  utility();

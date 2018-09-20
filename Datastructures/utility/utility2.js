@@ -17,7 +17,7 @@ class Stack {
 push(element)
 {
     // push element into the items
-    this.items.push(element)43;
+    this.items.push(element);
 }
 // pop function
 pop()

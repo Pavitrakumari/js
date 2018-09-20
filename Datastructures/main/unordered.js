@@ -33,27 +33,39 @@ var read = readline.createInterface(
 function unOrderedList() {
 
     read.question('Enter the element to search: ', function (element) {
-
+  
+        if(isNaN(element)) 
+        {
         var list = new utility();                    //create an object for list which is in utility
       
+            
+            
+
         for (var i = 0; i < (data.length); i++)     //adding data to list
        {
             list.add(data[i]);
        }
        if (list.indexOf(element) == -1)           //if element is not found then add the element into the list
        {
-           list.add(element);
+        console.log(" Element not found...so adding the search element into the list..")
+        list.add(element);
            
        }
        else                                      //if element is found,then remove the element from the list
         {
             list.removeElement(element);
-           
+           console.log("Element found in the list...so removing the element from the list...");
         }
         list.printList();                       //print the list which is modified
         var l1=list.printList1();               
         fs.writeFileSync('/home/administrator/js/Datastructures/main/file1.txt', l1); //rewrite the file with the modified list
-        read.close();
+        
+    }
+    
+    else console.log("Please enter only words into the list........");
+    
+
+    read.close();
     });
 }
 unOrderedList();
